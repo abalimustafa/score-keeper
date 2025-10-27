@@ -4,113 +4,143 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Score Keeper – Game Score Tracker</title>
-  <link rel="icon" href="app-icon.png" />
+  <meta name="description" content="Free iOS app to track scores for card, tile, and board games — multiple players, multiple rounds, simple and ad-free." />
+  <meta name="keywords" content="score keeper, score tracker, card games, board games, tile games, score counter, family games, ios, free app, no ads, multiplayer score app" />
+  <meta name="author" content="Abali Mustafa" />
 
-  <!-- 🧠 SEO Metadata -->
-  <meta name="description" content="Track scores for your favorite card, tile, and board games — multiple players, multiple rounds, free and ad-free!" />
-  <meta name="keywords" content="score keeper, game score tracker, card games, board games, tile games, score counter, family games, ios, free app, no ads, multiplayer score app" />
-  <meta name="author" content="Mustafa Abali" />
   <meta property="og:title" content="Score Keeper – Game Score Tracker" />
   <meta property="og:description" content="Track scores for your favorite games — card, tile, and board! Free, simple, and ad-free." />
-  <meta property="og:image" content="https://yourusername.github.io/score-keeper/app-icon.png" />
-  <meta property="og:url" content="https://yourusername.github.io/score-keeper/" />
+  <meta property="og:image" content="https://abalimustafa.github.io/score-keeper/app-icon.png" />
+  <meta property="og:url" content="https://abalimustafa.github.io/score-keeper/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- 📊 Google Analytics (replace G-XXXXXXXXXX with your ID) -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f4c81;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 60px 20px 20px;
+    }
+
+    .app-icon {
+      width: 120px;
+      border-radius: 25px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 10px 0 5px;
+    }
+
+    p.subtitle {
+      font-size: 18px;
+      color: #cde0f3;
+      margin: 0;
+    }
+
+    .button {
+      background-color: #007aff;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin: 30px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0066d3;
+    }
+
+    .screenshots {
+      background-color: #0a3a64;
+      padding: 50px 20px;
+    }
+
+    .screenshots h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 0 10px;
+    }
+
+    .gallery img {
+      width: 260px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 14px;
+      background-color: #072a48;
+    }
+
+    @media (max-width: 600px) {
+      .gallery img {
+        width: 80%;
+      }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K57S33F9RB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-K57S33F9RB');
   </script>
-
-  <!-- 💅 Styles -->
-  <style>
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      margin: 0;
-      background-color: #1565c0;
-      color: #fff;
-      text-align: center;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 20px;
-    }
-    .screenshots {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 40px 0;
-    }
-    .screenshot {
-      width: 150px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-    }
-    .screenshot:hover {
-      transform: scale(1.05);
-    }
-    .badge {
-      display: inline-block;
-      margin-top: 10px;
-      transition: transform 0.3s;
-    }
-    .badge:hover {
-      transform: scale(1.05);
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      .screenshot { width: 45%; }
-    }
-  </style>
 </head>
+
 <body>
-  <div class="container">
-    <img src="app-icon.png" alt="App Icon" width="120" />
+  <header>
+    <img src="app-icon.png" alt="Score Keeper App Icon" class="app-icon" />
     <h1>Score Keeper</h1>
-    <p>Keep track of your favorite card, tile, and board games — free and ad-free! 🎲<br>
-       Perfect for families, friends, and game nights.</p>
-
-    <!-- App Store Badge -->
-    <a href="https://apps.apple.com/ca/app/score-keeper-pro/id6753701071" target="_blank" class="badge">
-      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="180" />
+    <p class="subtitle">Track scores for your favorite games</p>
+    <a href="https://apps.apple.com/ca/app/score-keeper-pro/id6753701071" target="_blank" class="button">
+      Download on the App Store
     </a>
+  </header>
 
-    <div class="screenshots">
-      <img src="1.png" alt="Home" class="screenshot" />
-      <img src="2.png" alt="New Game" class="screenshot" />
-      <img src="3.png" alt="Scoreboard" class="screenshot" />
-      <img src="4.png" alt="Enter Scores" class="screenshot" />
-      <img src="5.png" alt="Results" class="screenshot" />
-      <img src="6.png" alt="History" class="screenshot" />
+  <section class="screenshots">
+    <h2>App Screenshots</h2>
+    <div class="gallery">
+      <img src="1.png" alt="App Screenshot 1">
+      <img src="2.png" alt="App Screenshot 2">
+      <img src="3.png" alt="App Screenshot 3">
+      <img src="4.png" alt="App Screenshot 4">
+      <img src="5.png" alt="App Screenshot 5">
+      <img src="6.png" alt="App Screenshot 6">
     </div>
+  </section>
 
-    <footer>
-      © 2025 Score Keeper | Made with ❤️ by Mustafa Abali
-    </footer>
-  </div>
+  <footer>
+    © 2025 Score Keeper | Made by Abali Mustafa | Free and Ad-Free
+  </footer>
 </body>
 </html>
