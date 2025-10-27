@@ -86,11 +86,49 @@
       border-radius: 20px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
     .gallery img:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 20px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #bbb;
     }
 
     footer {
@@ -100,9 +138,9 @@
       background-color: #072a48;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 600px) {
       .gallery img {
-        width: 100%;
+        width: 80%;
       }
     }
   </style>
@@ -130,17 +168,39 @@
   <section class="screenshots">
     <h2>App Screenshots</h2>
     <div class="gallery">
-      <img src="1.png" alt="App Screenshot 1">
-      <img src="2.png" alt="App Screenshot 2">
-      <img src="3.png" alt="App Screenshot 3">
-      <img src="4.png" alt="App Screenshot 4">
-      <img src="5.png" alt="App Screenshot 5">
-      <img src="6.png" alt="App Screenshot 6">
+      <img src="1.png" alt="App Screenshot 1" onclick="openLightbox(this.src)">
+      <img src="2.png" alt="App Screenshot 2" onclick="openLightbox(this.src)">
+      <img src="3.png" alt="App Screenshot 3" onclick="openLightbox(this.src)">
+      <img src="4.png" alt="App Screenshot 4" onclick="openLightbox(this.src)">
+      <img src="5.png" alt="App Screenshot 5" onclick="openLightbox(this.src)">
+      <img src="6.png" alt="App Screenshot 6" onclick="openLightbox(this.src)">
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Expanded Screenshot">
+  </div>
 
   <footer>
     © 2025 Score Keeper | Made by Abali Mustafa | Free and Ad-Free
   </footer>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox").style.display = "block";
+      document.getElementById("lightbox-img").src = src;
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    // Also close lightbox if user presses ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") closeLightbox();
+    });
+  </script>
 </body>
 </html>
